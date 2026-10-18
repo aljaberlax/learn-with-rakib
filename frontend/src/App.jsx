@@ -13,6 +13,8 @@ function Navbar() {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const onCatalog = location.pathname === "/";
+  const onLogin = location.pathname === "/login";
+  const onSignup = location.pathname === "/signup";
   const selectedView =
     searchParams.get("view") === "upcoming" ? "upcoming" : "all";
 
@@ -51,10 +53,20 @@ function Navbar() {
           </Link>
         </nav>
         <div className="nav-actions">
-          <Link className="login-link" to="/login">
+          <Link
+            className={onLogin ? "login-link active" : "login-link"}
+            to="/login"
+            aria-current={onLogin ? "page" : undefined}
+          >
             Log in
           </Link>
-          <Link className="btn nav-signup" to="/signup">
+          <Link
+            className={
+              onSignup ? "btn nav-signup active" : "btn nav-signup"
+            }
+            to="/signup"
+            aria-current={onSignup ? "page" : undefined}
+          >
             Sign up
           </Link>
         </div>
