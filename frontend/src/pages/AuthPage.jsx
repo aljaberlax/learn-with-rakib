@@ -30,7 +30,7 @@ export default function AuthPage() {
         <p className="auth-description">
           {isSignup
             ? "Join a course and build your networking skills one lesson at a time."
-            : "Log in to continue learning with learn with Rakib."}
+            : "Log in to continue learning with Rakib."}
         </p>
 
         <form className="auth-form" onSubmit={handleSubmit}>
